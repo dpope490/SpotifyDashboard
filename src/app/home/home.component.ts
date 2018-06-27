@@ -12,4 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchMusic() {
+    console.log("Test");
+  }
 }
