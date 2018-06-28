@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DashboardService} from '../services/dashboard.service';
+import {Artist} from '../artist';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  artists: Artist[];
   searchString: string;
+  searchRes: Artist[];
 
-  searchMusic() {
-    console.log(this.searchString);
+  searchMusic(): void {
+    this.dashboardService.searchMusic(this.searchString)
+      .subscribe(artists => this.searchRes = artists);
+    console.log(this.artists);
   }
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
   }
