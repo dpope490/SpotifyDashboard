@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  client_id = 'CLIENT_ID';
+  client_secret = 'CLIENT_SECRET';
+  redirect_uri = 'REDIRECT_URI';
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  searchMusic() {
-    console.log("Test");
-  }
 }
